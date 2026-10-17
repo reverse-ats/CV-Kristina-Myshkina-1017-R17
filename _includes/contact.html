@@ -1,0 +1,114 @@
+{% assign contact = site.data.data.contact %}
+{% if contact %}
+<section class="contact">
+    <div class="title">Contact</div>
+    <div class="contact-grid">
+    <div class="left-column">
+
+    {% assign phone = contact.phone | strip %}
+    {% if phone.size > 0 %}
+    <div class="contact-item">
+        <i data-feather="phone"></i>
+        <a href="#">
+            {{phone}}
+        </a>
+    </div>
+    {% endif %}
+
+    {% assign telegram = contact.telegram | strip %}
+    {% if telegram.size > 0 %}
+    <div class="contact-item">
+        <i data-feather="send"></i>
+        <a href="https://t.me/{{telegram}}">
+            {{telegram}}
+        </a>
+    </div>
+    {% endif %}
+
+    {% assign linkedin = contact.linkedin | strip %}
+    {% if linkedin.size > 0 %}
+    <div class="contact-item">
+        <i data-feather="linkedin"></i>
+        <a href="https://linkedin.com/in/{{linkedin}}">
+            {{linkedin}}
+        </a>
+    </div>
+    {% endif %}
+
+    {% assign email = contact.email | strip %}
+    {% if email.size > 0 %}
+    <div class="contact-item">
+        <i data-feather="mail"></i>
+        <a href="mailto:{{email}}">
+            {{email}}
+        </a>
+    </div>
+    {% endif %}
+
+    {% assign timezone = contact.timezone | strip %}
+    {% if timezone.size > 0 %}
+    <div class="contact-item">
+        <i data-feather="clock"></i>
+        <a href="https://www.timeanddate.com/time/zone/timezone/{{timezone}}">
+           Timezone {{timezone}}
+        </a>
+    </div>
+    {% endif %}
+
+
+    {% assign calendar = contact.calendar | strip %}
+    {% if calendar.size > 0 %}
+    <div class="contact-item">
+        <i data-feather="calendar"></i>
+        <a href="{{calendar}}">
+            Calendar
+        </a>
+    </div>
+    {% endif %}
+
+
+    </div>
+    <div class="right-column">
+
+    {% assign download = contact.download | strip %}
+    {% if download.size > 0 %}
+    <div class="contact-item">
+        <i data-feather="download"></i>
+        <a href="{{download}}" download>
+            Download this CV as a file
+        </a>
+    </div>
+    {% endif %}
+
+    {% assign github = contact.github | strip %}
+    {% if github.size > 0 %}
+    <div class="contact-item">
+        <i data-feather="github"></i>
+        <a href="https://github.com/{{github}}">
+            {{github}}
+        </a>
+    </div>
+    {% endif %}
+
+    {% assign gitlab = contact.gitlab | strip %}
+    {% if gitlab.size > 0 %}
+    <div class="contact-item">
+        <i data-feather="gitlab"></i>
+        <a href="https://gitlab.com/{{gitlab}}">
+            {{gitlab}}
+        </a>
+    </div>
+    {% endif %}
+
+    {% assign print = contact.print | strip %}
+    {% if print.size > 0 %}
+    <div class="contact-item">
+        <i data-feather="printer"></i>
+        <button class="contact-button" onclick="window.print()"> {{print}}</button>
+    </div>
+    {% endif %}
+
+    </div>
+    </div>
+</section>
+{% endif %}
